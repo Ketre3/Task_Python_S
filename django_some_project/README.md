@@ -15,7 +15,7 @@
 **Urls:**
 - `/api/post/all` - all posts
 - `/api/post/{post_id}/like` - like (or unlike) post with {post_id}
-- `/api/analytics/likes` - analytics about how many likes were made aggregated by day
+- `/api/analytics/likes/?date_from={date_from}&date_to={date_to}` - analytics about how many likes were made aggregated by day
 - `/api/analytics/user/{username}` - analytics about user last activity
 - `/api/account/login`
 - `/api/account/register`
