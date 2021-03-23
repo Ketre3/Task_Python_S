@@ -74,6 +74,7 @@ def main():
     for _ in range(settings['number_of_users']):
         username, password = generate_random_username_and_password()
         tokens = register(username, password)
+        print(f"Registered: {username=}, {password=}")
         jwt_tokens.append(tokens['access'])
     
     posts_id = []
@@ -86,6 +87,7 @@ def main():
                 title=random_word(),
                 text=random_word(length=30),
             )
+            print(f"Created post with title: {post['title']}, post id - {post['id']}")
             posts_id.append(post['id'])
     
     for token in jwt_tokens:
@@ -98,6 +100,8 @@ def main():
                 jwt_token=token,
                 post_id=post_id,
             )
+            print(f"Post with {post_id} liked")
+
 
 
 if __name__ == "__main__":
